@@ -1,86 +1,86 @@
-<?php 
+<?php
 
 /*
  * If the current post is protected by a password and
  * the visitor has not yet entered the password we will
  * return early without loading the comments.
 */
-if ( post_password_required() ) {
-	return;
+if (post_password_required()) {
+    return;
 }
 
-if ( $comments ) : 
-	?>
+if ($comments) :
+?>
 
-	<div class="comments section-inner mw-thin max-percentage no-margin" id="comments">
+    <div class="comments section-inner mw-thin max-percentage no-margin" id="comments">
 
-		<?php
+        <?php
 
-		$post_type 			= get_post_type();
-		$comments_number 	= absint( get_comments_number() );
-		
-		if ( get_post_type() == 'product' ) {
-			// Translators: %s = the number of reviews.
-			$comments_title = sprintf( _nx( '%s Review', '%s Reviews', $comments_number, 'Translators: %s = the number of reviews', 'eksell' ), $comments_number );
-		} else {
-			// Translators: %s = the number of comments.
-			$comments_title = sprintf( _nx( '%s Comment', '%s Comments', $comments_number, 'Translators: %s = the number of comments', 'eksell' ), $comments_number );
-		}
+        $post_type             = get_post_type();
+        $comments_number     = absint(get_comments_number());
 
-		// Filter the comments title before output.
-		$comments_title = apply_filters( 'eksell_comments_title', $comments_title, $comments_number, $post_type );
+        if (get_post_type() == 'product') {
+            // Translators: %s = the number of reviews.
+            $comments_title = sprintf(_nx('%s Review', '%s Reviews', $comments_number, 'Translators: %s = the number of reviews', 'mcgillmed_theme'), $comments_number);
+        } else {
+            // Translators: %s = the number of comments.
+            $comments_title = sprintf(_nx('%s Comment', '%s Comments', $comments_number, 'Translators: %s = the number of comments', 'mcgillmed_theme'), $comments_number);
+        }
 
-		if ( $comments_title ) : 
-			?>
+        // Filter the comments title before output.
+        $comments_title = apply_filters('mcgillmed_theme_comments_title', $comments_title, $comments_number, $post_type);
 
-			<div class="comments-header">
-				<hr class="color-accent" aria-hidden="true" />
-				<h2 class="comment-reply-title"><?php echo esc_html( $comments_title ); ?></h2>
-			</div><!-- .comments-header -->
+        if ($comments_title) :
+        ?>
 
-			<?php
-		endif;
+            <div class="comments-header">
+                <hr class="color-accent" aria-hidden="true" />
+                <h2 class="comment-reply-title"><?php echo esc_html($comments_title); ?></h2>
+            </div><!-- .comments-header -->
 
-		wp_list_comments( array(
-			'avatar_size' => 120,
-			'style'       => 'div',
-		) );
+        <?php
+        endif;
 
-		$comment_pagination = paginate_comments_links( array(
-			'echo'      => false,
-			'end_size'  => 0,
-			'mid_size'  => 0,
-			'next_text' => '<span class="text"><span class="long">' . esc_html__( 'Newer Comments', 'eksell' ) . '</span><span class="short">' . esc_html__( 'Newer', 'eksell' ) . '</span></span><span class="arrow">&rarr;</span>',
-			'prev_text' => '<span class="arrow">&larr;</span><span class="text"><span class="long">' . esc_html__( 'Older Comments', 'eksell' ) . '</span><span class="short">' . esc_html__( 'Older', 'eksell' ) . '</span></span>',
-		) );
+        wp_list_comments(array(
+            'avatar_size' => 120,
+            'style'       => 'div',
+        ));
 
-		if ( $comment_pagination ) :
+        $comment_pagination = paginate_comments_links(array(
+            'echo'      => false,
+            'end_size'  => 0,
+            'mid_size'  => 0,
+            'next_text' => '<span class="text"><span class="long">' . esc_html__('Newer Comments', 'mcgillmed_theme') . '</span><span class="short">' . esc_html__('Newer', 'mcgillmed_theme') . '</span></span><span class="arrow">&rarr;</span>',
+            'prev_text' => '<span class="arrow">&larr;</span><span class="text"><span class="long">' . esc_html__('Older Comments', 'mcgillmed_theme') . '</span><span class="short">' . esc_html__('Older', 'mcgillmed_theme') . '</span></span>',
+        ));
 
-			// If we're only showing the "Next" link, add a class indicating so.
-			$pagination_classes = ( strpos( $comment_pagination, 'prev page-numbers' ) === false ) ? ' only-next' : '';
+        if ($comment_pagination) :
 
-			?>
+            // If we're only showing the "Next" link, add a class indicating so.
+            $pagination_classes = (strpos($comment_pagination, 'prev page-numbers') === false) ? ' only-next' : '';
 
-			<nav class="comments-pagination pagination<?php echo esc_attr( $pagination_classes ); ?>">
-				<hr class="wp-block-separator is-style-wide" aria-hidden="true" />
-				<div class="comments-pagination-inner">
-					<?php echo wp_kses_post( $comment_pagination ); ?>
-				</div><!-- .comments-pagination-inner -->
-			</nav>
+        ?>
 
-		<?php endif; ?>
+            <nav class="comments-pagination pagination<?php echo esc_attr($pagination_classes); ?>">
+                <hr class="wp-block-separator is-style-wide" aria-hidden="true" />
+                <div class="comments-pagination-inner">
+                    <?php echo wp_kses_post($comment_pagination); ?>
+                </div><!-- .comments-pagination-inner -->
+            </nav>
 
-	</div><!-- comments -->
+        <?php endif; ?>
 
-	<?php 
+    </div><!-- comments -->
+
+<?php
 endif;
 
-if ( comments_open() || pings_open() ) {
-	comment_form( array(
-		'cancel_reply_before'	=> '</span><small>',
-		'comment_notes_before'	=> '',
-		'comment_notes_after'	=> '',
-		'title_reply_before'	=> '<hr class="color-accent" aria-hidden="true" /><h2 id="reply-title" class="comment-reply-title h3"><span class="title">',
-		'title_reply_after'		=> '</h2>'
-	) );
+if (comments_open() || pings_open()) {
+    comment_form(array(
+        'cancel_reply_before'    => '</span><small>',
+        'comment_notes_before'    => '',
+        'comment_notes_after'    => '',
+        'title_reply_before'    => '<hr class="color-accent" aria-hidden="true" /><h2 id="reply-title" class="comment-reply-title h3"><span class="title">',
+        'title_reply_after'        => '</h2>'
+    ));
 }

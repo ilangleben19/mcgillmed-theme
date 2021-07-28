@@ -8,39 +8,39 @@ get_header(); ?>
 
 <main id="site-content" role="main">
 
-	<div class="site-content-inner">
+    <div class="site-content-inner">
 
-		<?php
+        <?php
 
-		if ( have_posts() ) :
-			while ( have_posts() ) : 
-			
-				the_post();
+        if (have_posts()) :
+            while (have_posts()) :
 
-				do_action( 'eksell_entry_article_start', $post->ID );
+                the_post();
 
-				?>
+                do_action('mcgillmed_theme_entry_article_start', $post->ID);
 
-				<div class="entry-content section-inner mw-thin">
+        ?>
 
-					<?php 
-					the_content();
-					wp_link_pages( array(
-						'before'           => '<nav class="post-nav-links"><hr /><div class="post-nav-links-list">',
-						'after'            => '</div></nav>',
-					) );
-					?>
+                <div class="entry-content section-inner mw-thin">
 
-				</div><!-- .entry-content -->
+                    <?php
+                    the_content();
+                    wp_link_pages(array(
+                        'before'           => '<nav class="post-nav-links"><hr /><div class="post-nav-links-list">',
+                        'after'            => '</div></nav>',
+                    ));
+                    ?>
 
-				<?php 
+                </div><!-- .entry-content -->
 
-			endwhile;
-		endif;
+        <?php
 
-		?>
+            endwhile;
+        endif;
 
-	</div><!-- .site-content-inner -->
+        ?>
+
+    </div><!-- .site-content-inner -->
 
 </main><!-- #site-content -->
 

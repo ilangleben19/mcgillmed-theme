@@ -1,193 +1,193 @@
 <?php
 
 // Used to determine whether the aside element should be output on the page. Filterable within the function.
-$has_aside = eksell_has_aside();
+$has_aside = mcgillmed_theme_has_aside();
 
 ?>
 
 <!DOCTYPE html>
 
-<html class="no-js<?php if ( $has_aside ) echo ' has-aside'; ?>" <?php language_attributes(); ?>>
+<html class="no-js<?php if ($has_aside) echo ' has-aside'; ?>" <?php language_attributes(); ?>>
 
-	<head>
+<head>
 
-		<meta http-equiv="content-type" content="<?php bloginfo( 'html_type' ); ?>" charset="<?php bloginfo( 'charset' ); ?>" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="content-type" content="<?php bloginfo('html_type'); ?>" charset="<?php bloginfo('charset'); ?>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<link rel="profile" href="//gmpg.org/xfn/11">
+    <link rel="profile" href="//gmpg.org/xfn/11">
 
-		<?php wp_head(); ?>
+    <?php wp_head(); ?>
 
-	</head>
+</head>
 
-	<body <?php body_class(); ?>>
+<body <?php body_class(); ?>>
 
-		<?php
+    <?php
 
-		if ( function_exists( 'wp_body_open' ) ) {
-			wp_body_open();
-		}
+    if (function_exists('wp_body_open')) {
+        wp_body_open();
+    }
 
-		?>
+    ?>
 
-		<a class="skip-link faux-button" href="#site-content"><?php esc_html_e( 'Skip to the content', 'eksell' ); ?></a>
+    <a class="skip-link faux-button" href="#site-content"><?php esc_html_e('Skip to the content', 'mcgillmed_theme'); ?></a>
 
-		<?php 
+    <?php
 
-		// Don't output the site header, the site aside or the modals on the Blank Canvas page template.
-		// The filter can be used to enable the blank canvas in different circumstances.
-		$blank_canvas 				= apply_filters( 'eksell_blank_canvas', is_page_template( array( 'page-templates/template-blank-canvas.php' ) ) );
-		$blank_canvas_with_aside 	= apply_filters( 'eksell_blank_canvas_with_aside', is_page_template( array( 'page-templates/template-blank-canvas-with-aside.php' ) ) );
+    // Don't output the site header, the site aside or the modals on the Blank Canvas page template.
+    // The filter can be used to enable the blank canvas in different circumstances.
+    $blank_canvas                 = apply_filters('mcgillmed_theme_blank_canvas', is_page_template(array('page-templates/template-blank-canvas.php')));
+    $blank_canvas_with_aside     = apply_filters('mcgillmed_theme_blank_canvas_with_aside', is_page_template(array('page-templates/template-blank-canvas-with-aside.php')));
 
-		// If it's a blank canvas, output nothing past this point.
-		if ( $blank_canvas ) return;
+    // If it's a blank canvas, output nothing past this point.
+    if ($blank_canvas) return;
 
-		// Include the site aside, which contains the navigation toggle on desktop.
-		get_template_part( 'inc/parts/site-aside' );
+    // Include the site aside, which contains the navigation toggle on desktop.
+    get_template_part('inc/parts/site-aside');
 
-		// Include the menu modal.
-		get_template_part( 'inc/parts/modal-menu' );
+    // Include the menu modal.
+    get_template_part('inc/parts/modal-menu');
 
-		// If it's a blank canvas with the aside, output nothing past this point.
-		if ( $blank_canvas_with_aside ) return;
+    // If it's a blank canvas with the aside, output nothing past this point.
+    if ($blank_canvas_with_aside) return;
 
-		// Check whether the header search is disabled in the customizer.
-		$enable_search = get_theme_mod( 'eksell_enable_search', true );
+    // Check whether the header search is disabled in the customizer.
+    $enable_search = get_theme_mod('mcgillmed_theme_enable_search', true);
 
-		// Determine whether we have a sticky header.
-		$header_classes = get_theme_mod( 'eksell_enable_sticky_header', true ) ? 'stick-me' : '';
+    // Determine whether we have a sticky header.
+    $header_classes = get_theme_mod('mcgillmed_theme_enable_sticky_header', true) ? 'stick-me' : '';
 
-		// Make the header classes filterable.
-		$header_classes = apply_filters( 'eksell_header_classes', $header_classes );
+    // Make the header classes filterable.
+    $header_classes = apply_filters('mcgillmed_theme_header_classes', $header_classes);
 
-		// Build a class attribute out of the header classes, if there are any.
-		$header_class_attr = $header_classes ? ' class="' . esc_attr( $header_classes ) . '"' : '';
-		
-		?>
+    // Build a class attribute out of the header classes, if there are any.
+    $header_class_attr = $header_classes ? ' class="' . esc_attr($header_classes) . '"' : '';
 
-		<header id="site-header"<?php echo $header_class_attr; ?>>
+    ?>
 
-			<?php 
-			do_action( 'eksell_header_start' );
-			?>
+    <header id="site-header" <?php echo $header_class_attr; ?>>
 
-			<div class="header-inner section-inner">
+        <?php
+        do_action('mcgillmed_theme_header_start');
+        ?>
 
-				<div class="header-titles">
+        <div class="header-inner section-inner">
 
-					<?php
+            <div class="header-titles">
 
-					$logo 				= eksell_get_custom_logo();
-					$site_title 		= wp_kses_post( get_bloginfo( 'name' ) );
-					$site_description 	= wp_kses_post( get_bloginfo( 'description' ) );
-					$show_header_text	= get_theme_mod( 'header_text', true );
+                <?php
 
-					if ( $logo ) {
-						$site_title_class = 'site-logo';
-						$home_link_contents = $logo . '<span class="screen-reader-text">' . $site_title . '</span>';
-					} else {
-						$site_title_class = 'site-title';
-						$home_link_contents = '<a href="' . esc_url( home_url( '/' ) ) . '" rel="home">' . $site_title . '</a>';
-					}
+                $logo                 = mcgillmed_theme_get_custom_logo();
+                $site_title         = wp_kses_post(get_bloginfo('name'));
+                $site_description     = wp_kses_post(get_bloginfo('description'));
+                $show_header_text    = get_theme_mod('header_text', true);
 
-					if ( is_front_page() && is_home() && ! is_paged() ) : ?>
-						<h1 class="<?php echo $site_title_class; ?>"><?php echo $home_link_contents; ?></h1>
-					<?php else : ?>
-						<div class="<?php echo $site_title_class; ?>"><?php echo $home_link_contents; ?></div>
-					<?php endif; ?>
+                if ($logo) {
+                    $site_title_class = 'site-logo';
+                    $home_link_contents = $logo . '<span class="screen-reader-text">' . $site_title . '</span>';
+                } else {
+                    $site_title_class = 'site-title';
+                    $home_link_contents = '<a href="' . esc_url(home_url('/')) . '" rel="home">' . $site_title . '</a>';
+                }
 
-					<?php if ( $logo && $show_header_text && ( $site_title || $site_description ) ) : ?>
+                if (is_front_page() && is_home() && !is_paged()) : ?>
+                    <h1 class="<?php echo $site_title_class; ?>"><?php echo $home_link_contents; ?></h1>
+                <?php else : ?>
+                    <div class="<?php echo $site_title_class; ?>"><?php echo $home_link_contents; ?></div>
+                <?php endif; ?>
 
-						<div class="header-logo-text">
+                <?php if ($logo && $show_header_text && ($site_title || $site_description)) : ?>
 
-							<?php
-							/* 
+                    <div class="header-logo-text">
+
+                        <?php
+                        /* 
 							 * The site title is included as screen reader text next to the logo (in the H1 element),
 							 * so it's hidden from screen readers here.
 							 */
-							if ( $site_title ) :
-								?>
-								<div class="site-title" aria-hidden="true"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo $site_title; ?></a></div>
-								<?php
-							endif;
+                        if ($site_title) :
+                        ?>
+                            <div class="site-title" aria-hidden="true"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php echo $site_title; ?></a></div>
+                        <?php
+                        endif;
 
-							if ( $site_description ) : 
-								?>
-								<div class="site-description color-secondary"><?php echo $site_description; ?></div>
-								<?php
-							endif;
-							?>
+                        if ($site_description) :
+                        ?>
+                            <div class="site-description color-secondary"><?php echo $site_description; ?></div>
+                        <?php
+                        endif;
+                        ?>
 
-						</div><!-- .header-logo-text -->
+                    </div><!-- .header-logo-text -->
 
-					<?php elseif ( $show_header_text && $site_description ) : ?>
+                <?php elseif ($show_header_text && $site_description) : ?>
 
-						<div class="site-description color-secondary"><?php echo $site_description; ?></div>
+                    <div class="site-description color-secondary"><?php echo $site_description; ?></div>
 
-					<?php endif; ?>
+                <?php endif; ?>
 
-				</div><!-- .header-titles -->
+            </div><!-- .header-titles -->
 
-				<div class="header-toggles">
+            <div class="header-toggles">
 
-					<?php 
-					
-					do_action( 'eksell_header_toggles_start' );
+                <?php
 
-					eksell_the_social_menu();
+                do_action('mcgillmed_theme_header_toggles_start');
 
-					if ( $enable_search ) : 
-						?>
+                mcgillmed_theme_the_social_menu();
 
-						<a href="#" class="search-toggle toggle" data-toggle-target=".search-modal" data-toggle-screen-lock="true" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-pressed="false" role="button" role="button" data-untoggle-below="700">
-							<span class="screen-reader-text"><?php esc_html_e( 'Search', 'eksell' ); ?></span>
-							<?php eksell_the_theme_svg( 'ui', 'search', 18, 18 ); ?>
-						</a>
+                if ($enable_search) :
+                ?>
 
-						<?php 
-					endif;
+                    <a href="#" class="search-toggle toggle" data-toggle-target=".search-modal" data-toggle-screen-lock="true" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-pressed="false" role="button" role="button" data-untoggle-below="700">
+                        <span class="screen-reader-text"><?php esc_html_e('Search', 'mcgillmed_theme'); ?></span>
+                        <?php mcgillmed_theme_the_theme_svg('ui', 'search', 18, 18); ?>
+                    </a>
 
-					$nav_toggle_class = $enable_search ? ' icon-menu-search' : ' icon-menu';
-					?>
+                <?php
+                endif;
 
-					<a href="#" class="nav-toggle mobile-nav-toggle toggle<?php echo $nav_toggle_class; ?>" data-toggle-target=".menu-modal" data-toggle-screen-lock="true" data-toggle-body-class="showing-menu-modal" data-set-focus=".menu-modal .nav-untoggle" aria-pressed="false" role="button">
+                $nav_toggle_class = $enable_search ? ' icon-menu-search' : ' icon-menu';
+                ?>
 
-						<?php if ( get_theme_mod( 'eksell_enable_menu_button_labels', false ) ) : ?>
-							<span class="mobile-nav-toggle-text"><?php esc_html_e( 'Menu', 'eksell' ); ?></span>
-						<?php else : ?>
-							<span class="screen-reader-text"><?php esc_html_e( 'Menu', 'eksell' ); ?></span>
-						<?php endif; ?>
+                <a href="#" class="nav-toggle mobile-nav-toggle toggle<?php echo $nav_toggle_class; ?>" data-toggle-target=".menu-modal" data-toggle-screen-lock="true" data-toggle-body-class="showing-menu-modal" data-set-focus=".menu-modal .nav-untoggle" aria-pressed="false" role="button">
 
-						<?php
-						// Determine the menu icon based on whether search is disabled.
-						if ( $enable_search ) {
-							eksell_the_theme_svg( 'ui', 'menu-search', 26, 24 );
-						} else {
-							eksell_the_theme_svg( 'ui', 'menu', 24, 24 );
-						}
-						?>
-						
-					</a>
+                    <?php if (get_theme_mod('mcgillmed_theme_enable_menu_button_labels', false)) : ?>
+                        <span class="mobile-nav-toggle-text"><?php esc_html_e('Menu', 'mcgillmed_theme'); ?></span>
+                    <?php else : ?>
+                        <span class="screen-reader-text"><?php esc_html_e('Menu', 'mcgillmed_theme'); ?></span>
+                    <?php endif; ?>
 
-					<?php
+                    <?php
+                    // Determine the menu icon based on whether search is disabled.
+                    if ($enable_search) {
+                        mcgillmed_theme_the_theme_svg('ui', 'menu-search', 26, 24);
+                    } else {
+                        mcgillmed_theme_the_theme_svg('ui', 'menu', 24, 24);
+                    }
+                    ?>
 
-					do_action( 'eksell_header_toggles_end' );
+                </a>
 
-					?>
+                <?php
 
-				</div><!-- .header-toggles -->
+                do_action('mcgillmed_theme_header_toggles_end');
 
-			</div><!-- .header-inner -->
+                ?>
 
-			<?php 
-			do_action( 'eksell_header_end' );
-			?>
+            </div><!-- .header-toggles -->
 
-		</header><!-- #site-header -->
-		
-		<?php
+        </div><!-- .header-inner -->
 
-		// Output the search modal (if it isn't deactivated in the customizer).
-		if ( $enable_search ) {
-			get_template_part( 'inc/parts/modal-search' );
-		}
+        <?php
+        do_action('mcgillmed_theme_header_end');
+        ?>
+
+    </header><!-- #site-header -->
+
+    <?php
+
+    // Output the search modal (if it isn't deactivated in the customizer).
+    if ($enable_search) {
+        get_template_part('inc/parts/modal-search');
+    }

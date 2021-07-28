@@ -249,7 +249,7 @@ License: GPLv2
 Source: https://wordpress.org/themes/twentytwentyone/
 Included as part of:
 - Eksell_SVG_Icons class
-- eksell_nav_menu_social_icons()
+- mcgillmed_theme_nav_menu_social_icons()
 - searchform.php
 - inc/block-patterns/contact-details.php
 
@@ -277,8 +277,8 @@ Version 1.6.0 (2021-06-24)
 - New: Added the "No Gutter" style to the Gallery block.
 - New: Output of the theme-color meta tag, based on the color values set in the Customizer, to adjust the color of the browser address bar in Safari 15.
 - New: Reworked the editor styles to use add_editor_style() instead of the enqueue_block_editor_assets action. This change was required to get the dynamic styles (colors, mostly) to work in the new Block Templates editor. Underlying changes:
-	- Updated eksell-editor-styles.css to use pixels units instead of rems, to make the units work with Core styles.
-	- Added eksell_pre_http_request_block_editor_customizer_styles(), which contains the workaround for adding dynamic styles to add_editor_style().
+	- Updated mcgillmed-theme-editor-styles.css to use pixels units instead of rems, to make the units work with Core styles.
+	- Added mcgillmed_theme_pre_http_request_block_editor_customizer_styles(), which contains the workaround for adding dynamic styles to add_editor_style().
 	- Editor style tweaks to handle Core modifications to styles added with add_editor_style().
 - Added a conditional, filterable has-aside class to the HTML element, used to determine whether to output the aside element on the current page. This fixes it being unintentionally visible in some cases in 1.5.0.
 - Fixed a slight style issue with separators in WordPress 5.8.
@@ -290,13 +290,13 @@ Version 1.6.0 (2021-06-24)
 Version 1.5.0 (2021-06-03)
 -------------------------
 - New: Added a post meta setting for single posts.
-- Updated the structure of the Eksell_Customizer::get_post_types_with_post_meta() array to support different defaults for single/archive for each post type. Child themes using the eksell_post_types_with_post_meta filter will need to be updated.
+- Updated the structure of the Eksell_Customizer::get_post_types_with_post_meta() array to support different defaults for single/archive for each post type. Child themes using the mcgillmed_theme_post_types_with_post_meta filter will need to be updated.
 - Updated the theme description to account for the change in post meta settings.
 - Reduced the mobile main menu font size.
 - Reduced the mobile font size of the gallery block image captions.
 - Increased the mobile archive title font size when not outputting paragraphs (e.g. archive title for taxonomy/author/date archives).
 - Updated the body background styles to prevent clipping of the menu bar background color when rubberband scrolling in Safari and on iOS (scrolling above the top or below the bottom of the site content).
-- Added missing apply_filters() comment blocks for eksell_post_meta_category_taxonomy and eksell_post_meta_tag_taxonomy.
+- Added missing apply_filters() comment blocks for mcgillmed_theme_post_meta_category_taxonomy and mcgillmed_theme_post_meta_tag_taxonomy.
 - Bumped the base vertical margin on mobile from 32 pixels to 40 pixels.
 - Blank Canvas with Menu Template: Fixed misbehaving navigation toggle text on mobile.
 - Buttons block: Fixed alignment issue with stacked buttons set to centered justification.
@@ -346,7 +346,7 @@ Version 1.3.0 (2021-04-14)
 - Readme: Added a description of the new Portfolio Template.
 - Archives: Output the previous page link on the last page of an archive as well.
 - Portfolio Archive Filter: When resetting the project grid, set posts per page to the value of the `jetpack_portfolio_posts_per_page` option.
-- Preview: Moved the "Hooked" comment for eksell_maybe_output_post_meta to the right action.
+- Preview: Moved the "Hooked" comment for mcgillmed_theme_maybe_output_post_meta to the right action.
 
 Version 1.2.0 (2021-04-12)
 -------------------------
@@ -371,7 +371,7 @@ Version 1.1.5 (2021-03-24)
 - Latest posts block: Remove top margin from the items in the first row of the grid.
 - Latest posts block: Fixed margin of grid items when set to single column.
 - Screenshot: Updated the site title and description, and changed the image format from JPG to PNG to reduce file size (from 290 KB to 147 KB).
-- Added the new --eksell-headings-weight CSS variable, to make it easier to modify headings weight in child themes and custom CSS.
+- Added the new --mcgillmed-theme-headings-weight CSS variable, to make it easier to modify headings weight in child themes and custom CSS.
 - JS: Camelcased the $eksellWin global variable, to match $eksellDoc.
 - Increased priority of the function updating the no-js html class, so it's called as early as possible.
 - Unset CSS animations triggered in JavaScript within a noscript element, to prevent the flash of unstyled animation elements that occurs when using the .no-js class.
@@ -413,14 +413,14 @@ Version 1.1.0 (2021-03-20)
 - Added output of the post meta setting in chaplin_maybe_output_post_meta(), with an action for outputting custom post meta and filters for modifying the output.
 - Removed the inner wrapping link in previews, and added separate links to the featured media and title, in order to support links in post meta and custom preview output.
 - Improved handling of line breaks in the header by allowing the header toggles (and social icons) to shrink.
-- Removed duplicate function eksell_is_comment_by_post_author(), and made the $comment argument required.
+- Removed duplicate function mcgillmed_theme_is_comment_by_post_author(), and made the $comment argument required.
 - Replaced all instances of esc_html( _x() ) with esc_html_x().
 - Updated readme.txt to mention the new setting for post meta.
 - Updated Eksell_SVG_Icons::get_svg() to include the icon name (formatted icon-[name]) as part of the SVG class attribute.
 - Added a generic link icon to the UI group, used for social menu items missing a matching SVG.
 - WordPress.org theme review updates (thanks, @acosmin):
 	- Updated the <link rel="profile" href="//gmpg.org/xfn/11"> in header.php to use // instead of http://.
-	- Fixed empty elseif statements in eksell_get_the_archive_title_prefix().
+	- Fixed empty elseif statements in mcgillmed_theme_get_the_archive_title_prefix().
 	- Fixed whitespace before the PHP open tag in footer.php.
 	- Prefixed variables with global scrope in construct.js, and removed unused global variables.
 	- Keyboard navigation:

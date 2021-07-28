@@ -2,158 +2,158 @@
 
 <main id="site-content" role="main">
 
-	<div class="site-content-inner">
+    <div class="site-content-inner">
 
-		<?php
+        <?php
 
-		$archive_prefix 		= eksell_get_the_archive_title_prefix();
-		$archive_title 			= get_the_archive_title();
-		$archive_description 	= get_the_archive_description( '<div>', '</div>' );
+        $archive_prefix         = mcgillmed_theme_get_the_archive_title_prefix();
+        $archive_title             = get_the_archive_title();
+        $archive_description     = get_the_archive_description('<div>', '</div>');
 
-		do_action( 'eksell_before_archive_header' );
-		
-		if ( $archive_title || $archive_description || ( eksell_show_home_filter() ) ) : 
+        do_action('mcgillmed_theme_before_archive_header');
 
-			// By default, only use the grid structure in the archive header if we have both a title and a description.
-			$use_header_grid = apply_filters( 'eksell_archive_header_use_grid', $archive_title && $archive_description );
+        if ($archive_title || $archive_description || (mcgillmed_theme_show_home_filter())) :
 
-			?>
-			
-			<header class="archive-header section-inner">
+            // By default, only use the grid structure in the archive header if we have both a title and a description.
+            $use_header_grid = apply_filters('mcgillmed_theme_archive_header_use_grid', $archive_title && $archive_description);
 
-				<?php if ( $use_header_grid ) : ?>
+        ?>
 
-					<div class="archive-header-grid grid cols-tl-6 no-v-gutter">
+            <header class="archive-header section-inner">
 
-						<div class="col">
-						
-							<?php 
-							
-							endif;
+                <?php if ($use_header_grid) : ?>
 
-							do_action( 'eksell_archive_header_start' );
-							
-							if ( $archive_prefix ) : 
-								?>
-								<p class="archive-prefix color-accent i-a a-fade-up"><?php echo $archive_prefix; ?></p>
-								<?php 
-							endif;
+                    <div class="archive-header-grid grid cols-tl-6 no-v-gutter">
 
-							if ( $archive_title ) :
+                        <div class="col">
 
-								// If we're outputting the home text or the Jetpack Portfolio archive text (in the latter case, only when a text is set), output the title in a div to enable multiple paragraphs.
-								if ( ( is_home() && ! is_paged() ) || ( is_post_type_archive( 'jetpack-portfolio' ) && ! is_paged() && get_theme_mod( 'eksell_jetpack_portfolio_archive_text', '' ) ) ) : 
-									?>
-									<div class="archive-title has-paragraphs contain-margins i-a a-fade-up"><?php echo wpautop( $archive_title ); ?></div>
-									<?php
-								else : 
-									?>
-									<h1 class="archive-title i-a a-fade-up"><?php echo $archive_title; ?></h1>
-									<?php
-								endif;
-							endif;
-							
-							if ( $use_header_grid ) : ?>
+                        <?php
 
-								</div><!-- .col -->
+                    endif;
 
-								<div class="col">
+                    do_action('mcgillmed_theme_archive_header_start');
 
-							<?php 
+                    if ($archive_prefix) :
+                        ?>
+                            <p class="archive-prefix color-accent i-a a-fade-up"><?php echo $archive_prefix; ?></p>
+                            <?php
+                        endif;
 
-							endif; 
-							if ( $archive_description ) : 
-								?>
-								<div class="archive-description mw-small contain-margins i-a a-fade-up a-del-100"><?php echo wpautop( $archive_description ); ?></div>
-								<?php 
-							endif;
-					
-							/*
-							 * @hooked eksell_the_archive_filter - 10
+                        if ($archive_title) :
+
+                            // If we're outputting the home text or the Jetpack Portfolio archive text (in the latter case, only when a text is set), output the title in a div to enable multiple paragraphs.
+                            if ((is_home() && !is_paged()) || (is_post_type_archive('jetpack-portfolio') && !is_paged() && get_theme_mod('mcgillmed_theme_jetpack_portfolio_archive_text', ''))) :
+                            ?>
+                                <div class="archive-title has-paragraphs contain-margins i-a a-fade-up"><?php echo wpautop($archive_title); ?></div>
+                            <?php
+                            else :
+                            ?>
+                                <h1 class="archive-title i-a a-fade-up"><?php echo $archive_title; ?></h1>
+                            <?php
+                            endif;
+                        endif;
+
+                        if ($use_header_grid) : ?>
+
+                        </div><!-- .col -->
+
+                        <div class="col">
+
+                        <?php
+
+                        endif;
+                        if ($archive_description) :
+                        ?>
+                            <div class="archive-description mw-small contain-margins i-a a-fade-up a-del-100"><?php echo wpautop($archive_description); ?></div>
+                        <?php
+                        endif;
+
+                        /*
+							 * @hooked mcgillmed_theme_the_archive_filter - 10
 							 */
-							do_action( 'eksell_archive_header_end' ); 
-							
-							if ( $use_header_grid ) : 
-							
-							?>
+                        do_action('mcgillmed_theme_archive_header_end');
 
-						</div><!-- .col -->
+                        if ($use_header_grid) :
 
-					</div><!-- .archive-header-grid -->
+                        ?>
 
-					<?php 
-				endif; 
-				?>
-				
-			</header><!-- .archive-header -->
+                        </div><!-- .col -->
 
-			<?php 
-		endif; 
+                    </div><!-- .archive-header-grid -->
 
-		do_action( 'eksell_after_archive_header' );
-				
-		if ( have_posts() ) : 
-		
-			?>
+                <?php
+                        endif;
+                ?>
 
-			<div class="posts">
+            </header><!-- .archive-header -->
 
-				<div class="section-inner">
+        <?php
+        endif;
 
-					<?php 
+        do_action('mcgillmed_theme_after_archive_header');
 
-					do_action( 'eksell_posts_start' );
+        if (have_posts()) :
 
-					// Get the column classes, based on the settings in the Customizer.
-					$archive_columns_classes_array 	= eksell_get_archive_columns_classes();
-					$archive_columns_classes 		= $archive_columns_classes_array ? ' ' . implode( ' ', $archive_columns_classes_array ) : '';
-				
-					?>
+        ?>
 
-					<div class="posts-grid grid load-more-target<?php echo esc_attr( $archive_columns_classes ); ?>">
+            <div class="posts">
 
-						<div class="col grid-sizer"></div>
-					
-						<?php 
-						while ( have_posts() ) : 
-							the_post(); 
-							?>
+                <div class="section-inner">
 
-							<div class="article-wrapper col">
-								<?php get_template_part( 'inc/parts/preview', get_post_type() ); ?>
-							</div>
+                    <?php
 
-							<?php 
-						endwhile;
-						?>
+                    do_action('mcgillmed_theme_posts_start');
 
-					</div><!-- .posts-grid -->
+                    // Get the column classes, based on the settings in the Customizer.
+                    $archive_columns_classes_array     = mcgillmed_theme_get_archive_columns_classes();
+                    $archive_columns_classes         = $archive_columns_classes_array ? ' ' . implode(' ', $archive_columns_classes_array) : '';
 
-					<?php 
-					do_action( 'eksell_posts_end' ); 
-					?>
-				
-				</div><!-- .section-inner -->
+                    ?>
 
-			</div><!-- .posts -->
+                    <div class="posts-grid grid load-more-target<?php echo esc_attr($archive_columns_classes); ?>">
 
-			<?php 
-			
-			get_template_part( 'pagination' ); 
-			
-		elseif ( is_search() ) : 
-		
-			?>
+                        <div class="col grid-sizer"></div>
 
-			<div class="no-search-results-form section-inner contain-margins">
-				<?php get_search_form(); ?>
-			</div><!-- .no-search-results -->
+                        <?php
+                        while (have_posts()) :
+                            the_post();
+                        ?>
 
-			<?php 
-		endif;
-		?>
+                            <div class="article-wrapper col">
+                                <?php get_template_part('inc/parts/preview', get_post_type()); ?>
+                            </div>
 
-	</div><!-- .site-content-inner -->
+                        <?php
+                        endwhile;
+                        ?>
+
+                    </div><!-- .posts-grid -->
+
+                    <?php
+                    do_action('mcgillmed_theme_posts_end');
+                    ?>
+
+                </div><!-- .section-inner -->
+
+            </div><!-- .posts -->
+
+        <?php
+
+            get_template_part('pagination');
+
+        elseif (is_search()) :
+
+        ?>
+
+            <div class="no-search-results-form section-inner contain-margins">
+                <?php get_search_form(); ?>
+            </div><!-- .no-search-results -->
+
+        <?php
+        endif;
+        ?>
+
+    </div><!-- .site-content-inner -->
 
 </main><!-- #site-content -->
 

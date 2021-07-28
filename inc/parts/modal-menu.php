@@ -1,82 +1,82 @@
 <div class="menu-modal cover-modal" data-modal-target-string=".menu-modal" aria-expanded="false">
 
-	<div class="menu-modal-cover-untoggle" data-toggle-target=".menu-modal" data-toggle-screen-lock="true" data-toggle-body-class="showing-menu-modal" data-set-focus="#site-aside .nav-toggle"></div>
+    <div class="menu-modal-cover-untoggle" data-toggle-target=".menu-modal" data-toggle-screen-lock="true" data-toggle-body-class="showing-menu-modal" data-set-focus="#site-aside .nav-toggle"></div>
 
-	<div class="menu-modal-inner modal-inner bg-menu-modal-background color-menu-modal-text">
+    <div class="menu-modal-inner modal-inner bg-menu-modal-background color-menu-modal-text">
 
-		<div class="modal-menu-wrapper">
+        <div class="modal-menu-wrapper">
 
-			<div class="menu-modal-toggles">
+            <div class="menu-modal-toggles">
 
-				<a href="#" class="toggle nav-untoggle" data-toggle-target=".menu-modal" data-toggle-screen-lock="true" data-toggle-body-class="showing-menu-modal" aria-pressed="false" role="button" data-set-focus="#site-aside .nav-toggle">
-					
-					<?php if ( get_theme_mod( 'eksell_enable_menu_button_labels', false ) ) : ?>
-						<span class="nav-untoggle-text"><?php esc_html_e( 'Close', 'eksell' ); ?></span>
-					<?php else : ?>
-						<span class="screen-reader-text"><?php esc_html_e( 'Close', 'eksell' ); ?></span>
-					<?php endif; ?>
+                <a href="#" class="toggle nav-untoggle" data-toggle-target=".menu-modal" data-toggle-screen-lock="true" data-toggle-body-class="showing-menu-modal" aria-pressed="false" role="button" data-set-focus="#site-aside .nav-toggle">
 
-					<?php eksell_the_theme_svg( 'ui', 'close', 18, 18 ); ?>
+                    <?php if (get_theme_mod('mcgillmed_theme_enable_menu_button_labels', false)) : ?>
+                        <span class="nav-untoggle-text"><?php esc_html_e('Close', 'mcgillmed_theme'); ?></span>
+                    <?php else : ?>
+                        <span class="screen-reader-text"><?php esc_html_e('Close', 'mcgillmed_theme'); ?></span>
+                    <?php endif; ?>
 
-				</a><!-- .nav-untoggle -->
+                    <?php mcgillmed_theme_the_theme_svg('ui', 'close', 18, 18); ?>
 
-			</div><!-- .menu-modal-toggles -->
+                </a><!-- .nav-untoggle -->
 
-			<div class="menu-top">
+            </div><!-- .menu-modal-toggles -->
 
-				<?php 
-				do_action( 'eksell_menu_modal_top_start' );
-				?>
+            <div class="menu-top">
 
-				<ul class="main-menu reset-list-style">
-					<?php
-					if ( has_nav_menu( 'main' ) ) {
-						wp_nav_menu( array(
-							'container'      		=> '',
-							'items_wrap'     		=> '%3$s',
-							'show_toggles'   		=> true,
-							'theme_location' 		=> 'main',
-						) );
-					} else {
-						wp_list_pages( array( 
-							'match_menu_classes' 	=> true,
-							'title_li'           	=> false, 
-						) );
-					}
-					?>
-				</ul><!-- .main-menu -->
+                <?php
+                do_action('mcgillmed_theme_menu_modal_top_start');
+                ?>
 
-				<?php 
-				if ( get_theme_mod( 'eksell_enable_search', true ) ) : 
-					?>
-					<div class="menu-modal-search">
-						<?php get_search_form(); ?>
-					</div><!-- .menu-modal-search -->
-					<?php 
-				endif;
-				
-				do_action( 'eksell_menu_modal_top_end' );
-				?>
+                <ul class="main-menu reset-list-style">
+                    <?php
+                    if (has_nav_menu('main')) {
+                        wp_nav_menu(array(
+                            'container'              => '',
+                            'items_wrap'             => '%3$s',
+                            'show_toggles'           => true,
+                            'theme_location'         => 'main',
+                        ));
+                    } else {
+                        wp_list_pages(array(
+                            'match_menu_classes'     => true,
+                            'title_li'               => false,
+                        ));
+                    }
+                    ?>
+                </ul><!-- .main-menu -->
 
-			</div><!-- .menu-top -->
+                <?php
+                if (get_theme_mod('mcgillmed_theme_enable_search', true)) :
+                ?>
+                    <div class="menu-modal-search">
+                        <?php get_search_form(); ?>
+                    </div><!-- .menu-modal-search -->
+                <?php
+                endif;
 
-			<div class="menu-bottom">
+                do_action('mcgillmed_theme_menu_modal_top_end');
+                ?>
 
-				<?php
-				do_action( 'eksell_menu_modal_bottom_start' );
-				
-				// Output the social menu, if set
-				eksell_the_social_menu( array(
-					'menu_class'	=> 'social-menu reset-list-style social-icons circular',
-				) );
+            </div><!-- .menu-top -->
 
-				do_action( 'eksell_menu_modal_bottom_end' );
-				?>
+            <div class="menu-bottom">
 
-			</div><!-- .menu-bottom -->
+                <?php
+                do_action('mcgillmed_theme_menu_modal_bottom_start');
 
-		</div><!-- .menu-wrapper -->
+                // Output the social menu, if set
+                mcgillmed_theme_the_social_menu(array(
+                    'menu_class'    => 'social-menu reset-list-style social-icons circular',
+                ));
 
-	</div><!-- .menu-modal-inner -->
+                do_action('mcgillmed_theme_menu_modal_bottom_end');
+                ?>
+
+            </div><!-- .menu-bottom -->
+
+        </div><!-- .menu-wrapper -->
+
+    </div><!-- .menu-modal-inner -->
 
 </div><!-- .menu-modal -->

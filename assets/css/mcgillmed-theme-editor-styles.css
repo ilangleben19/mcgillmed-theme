@@ -1,5 +1,5 @@
 /* ---------------------------------------------------------------------------------------------
-	Eksell Editor Styles
+	McGill Med Theme Editor Styles
 ------------------------------------------------------------------------------------------------ */
 
 
@@ -9,28 +9,28 @@
 
 :root {
 	/* Typography */
-	--eksell-body-font: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, sans-serif;
-	--eksell-headings-font: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, sans-serif;
-	--eksell-headings-weight: 700;
+	--mcgillmed-theme-body-font: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, sans-serif;
+	--mcgillmed-theme-headings-font: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, sans-serif;
+	--mcgillmed-theme-headings-weight: 700;
 	/* Colors */
-	--eksell-accent-color: #d23c50;
-	--eksell-primary-color: #1e2d32;
-	--eksell-secondary-color: #707376;
-	--eksell-border-color: #d6d5d4;
-	--eksell-light-background-color: #f3efe9;
-	--eksell-background-color: #fff;
+	--mcgillmed-theme-accent-color: #d23c50;
+	--mcgillmed-theme-primary-color: #1e2d32;
+	--mcgillmed-theme-secondary-color: #707376;
+	--mcgillmed-theme-border-color: #d6d5d4;
+	--mcgillmed-theme-light-background-color: #f3efe9;
+	--mcgillmed-theme-background-color: #fff;
 	/* Layout */
-	--eksell-inner-width-thin: 652px;
-	--eksell-inner-width-small: 760px;
-	--eksell-inner-width-medium: 1040px;
-	--eksell-inner-width-max: 2052px;
-	--eksell-inner-gutter: 48px;
-	--eksell-inner-gutter-compensated: 28px; /* Removes 20px (10px padding) added by Core to the top block editor ancestor */
+	--mcgillmed-theme-inner-width-thin: 652px;
+	--mcgillmed-theme-inner-width-small: 760px;
+	--mcgillmed-theme-inner-width-medium: 1040px;
+	--mcgillmed-theme-inner-width-max: 2052px;
+	--mcgillmed-theme-inner-gutter: 48px;
+	--mcgillmed-theme-inner-gutter-compensated: 28px; /* Removes 20px (10px padding) added by Core to the top block editor ancestor */
 }
 
 :root {
-	background-color: var( --eksell-background-color );
-	color: var( --eksell-primary-color );
+	background-color: var( --mcgillmed-theme-background-color );
+	color: var( --mcgillmed-theme-primary-color );
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 	padding: 0;
@@ -41,7 +41,7 @@
 }
 
 :root > * {
-	font-family: var( --eksell-body-font );
+	font-family: var( --mcgillmed-theme-body-font );
 	font-size: 17px;
 	line-height: 1.5;
 }
@@ -52,7 +52,7 @@
 }
 
 .block-editor-default-block-appender textarea.block-editor-default-block-appender__content {
-	color: var( --eksell-secondary-color );
+	color: var( --mcgillmed-theme-secondary-color );
 	font-family: inherit;
 	font-size: inherit;
 }
@@ -101,7 +101,7 @@
 .edit-post-visual-editor textarea::placeholder, 
 .editor-post-publish-panel input::placeholder, 
 .editor-post-publish-panel textarea::placeholder {
-	color: var( --eksell-secondary-color );
+	color: var( --mcgillmed-theme-secondary-color );
 }
 
 
@@ -111,7 +111,7 @@
 
 
 .wp-block {
-	max-width: var( --eksell-inner-width-thin );
+	max-width: var( --mcgillmed-theme-inner-width-thin );
 }
 
 :root .block-editor-block-list__layout.is-root-container > *[data-align="full"] {
@@ -122,7 +122,7 @@
 :root .block-editor-block-list__layout.is-root-container > *:not([data-align="full"]) {
 	margin-left: auto;
 	margin-right: auto;
-	width: calc( 100% - var( --eksell-inner-gutter-compensated ) );
+	width: calc( 100% - var( --mcgillmed-theme-inner-gutter-compensated ) );
 }
 
 .wp-block .wp-block,
@@ -161,7 +161,7 @@
 }
 
 :root *[data-align="wide"] {
-    max-width: var( --eksell-inner-width-max );
+    max-width: var( --mcgillmed-theme-inner-width-max );
 }
 
 :root *[data-align="full"] {
@@ -178,10 +178,10 @@
 
 /* LAYOUT HELPERS */
 
-:root .mw-thin { max-width: var( --eksell-inner-width-thin ) !important; }
-:root .mw-small { max-width: var( --eksell-inner-width-small ) !important; }
-:root .mw-medium { max-width: var( --eksell-inner-width-medium ) !important; }
-:root .mw-max { max-width: var( --eksell-inner-width-max ) !important; }
+:root .mw-thin { max-width: var( --mcgillmed-theme-inner-width-thin ) !important; }
+:root .mw-small { max-width: var( --mcgillmed-theme-inner-width-small ) !important; }
+:root .mw-medium { max-width: var( --mcgillmed-theme-inner-width-medium ) !important; }
+:root .mw-max { max-width: var( --mcgillmed-theme-inner-width-max ) !important; }
 
 .center,
 .center-h {
@@ -204,16 +204,16 @@
 .wp-block-post-content > *.wp-block {
 	margin-left: auto;
 	margin-right: auto;
-	max-width: var( --eksell-inner-width-thin );
+	max-width: var( --mcgillmed-theme-inner-width-thin );
 }
 
 .wp-block-post-content[data-align="full"] > *,
 .wp-block[data-align="full"] > .wp-block-post-content > * {
-	width: calc( 100% - var( --eksell-inner-gutter-compensated ) );
+	width: calc( 100% - var( --mcgillmed-theme-inner-gutter-compensated ) );
 }
 
 *[data-align="full"] { max-width: none !important; width: unset !important; }
-.wp-block-post-content > *[data-align="wide"] { max-width: var( --eksell-inner-width-max ); }
+.wp-block-post-content > *[data-align="wide"] { max-width: var( --mcgillmed-theme-inner-width-max ); }
 
 .wp-block-post-content .wp-block .wp-block {
 	max-width: 100%;
@@ -227,27 +227,27 @@
 
 /* CUSTOM COLORS */
 
-:root .has-accent-color { color: var( --eksell-primary-color ); }
-:root .has-primary-color { color: var( --eksell-secondary-color ); }
-:root .has-secondary-color { color: var( --eksell-accent-color ); }
-:root .has-border-color { color: var( --eksell-border-color ); }
-:root .has-light-background-color { color: var( --eksell-light-background-color ); }
-:root .has-background-color { color: var( --eksell-background-color ); }
+:root .has-accent-color { color: var( --mcgillmed-theme-primary-color ); }
+:root .has-primary-color { color: var( --mcgillmed-theme-secondary-color ); }
+:root .has-secondary-color { color: var( --mcgillmed-theme-accent-color ); }
+:root .has-border-color { color: var( --mcgillmed-theme-border-color ); }
+:root .has-light-background-color { color: var( --mcgillmed-theme-light-background-color ); }
+:root .has-background-color { color: var( --mcgillmed-theme-background-color ); }
 
-:root .has-accent-background-color { background-color: var( --eksell-primary-color ); }
-:root .has-primary-background-color { background-color: var( --eksell-secondary-color ); }
-:root .has-secondary-background-color { background-color: var( --eksell-accent-color ); }
-:root .has-border-background-color { background-color: var( --eksell-border-color ); }
-:root .has-light-background-background-color { background-color: var( --eksell-light-background-color ); }
-:root .has-background-background-color { background-color: var( --eksell-background-color ); }
+:root .has-accent-background-color { background-color: var( --mcgillmed-theme-primary-color ); }
+:root .has-primary-background-color { background-color: var( --mcgillmed-theme-secondary-color ); }
+:root .has-secondary-background-color { background-color: var( --mcgillmed-theme-accent-color ); }
+:root .has-border-background-color { background-color: var( --mcgillmed-theme-border-color ); }
+:root .has-light-background-background-color { background-color: var( --mcgillmed-theme-light-background-color ); }
+:root .has-background-background-color { background-color: var( --mcgillmed-theme-background-color ); }
 
 /* GENERAL COLORS */
 
 :root .has-black-background-color { background-color: #000; }
-:root .has-white-background-color { background-color: var( --eksell-background-color ); }
+:root .has-white-background-color { background-color: var( --mcgillmed-theme-background-color ); }
 
 :root .has-black-color { color: #000; }
-:root .has-white-color { color: var( --eksell-background-color ); }
+:root .has-white-color { color: var( --mcgillmed-theme-background-color ); }
 
 :root .has-text-color a { color: inherit; }
 
@@ -259,7 +259,7 @@
 
 :root .editor-block-list__layout a,
 :root .block-editor-block-list__layout a {
-	color: var( --eksell-accent-color );
+	color: var( --mcgillmed-theme-accent-color );
 	text-decoration: underline;
 	text-decoration-thickness: 1px;
 	text-underline-offset: .175em;
@@ -271,7 +271,7 @@
 
 .edit-post-visual-editor__post-title-wrapper .editor-post-title {
 	margin: 29px auto;
-	width: calc( 100% - var( --eksell-inner-gutter-compensated ) );
+	width: calc( 100% - var( --mcgillmed-theme-inner-gutter-compensated ) );
 }
 
 .editor-post-title__block .editor-post-title__input,
@@ -280,7 +280,7 @@
 }
 
 .wp-block.editor-post-title:before {
-	color: var( --eksell-accent-color );
+	color: var( --mcgillmed-theme-accent-color );
 	content: "";
 	display: block;
 	height: 10px;
@@ -298,10 +298,10 @@
 :root h4,
 :root h5,
 :root h6 {
-	font-family: var( --eksell-headings-font );
+	font-family: var( --mcgillmed-theme-headings-font );
 	font-feature-settings: "lnum";
 	font-variant-numeric: lining-nums;
-	font-weight: var( --eksell-headings-weight );
+	font-weight: var( --mcgillmed-theme-headings-weight );
 	letter-spacing: -0.02em;
 	line-height: 1.25;
 	margin: 48px auto 32px;
@@ -366,7 +366,7 @@
 /* Drop Cap ---------------------------------- */
 
 .has-drop-cap:not(:focus):first-letter {
-	color: var( --eksell-accent-color );
+	color: var( --mcgillmed-theme-accent-color );
     font-size: 5.2em;
     font-weight: 700;
 	margin: .09em 10px 5px 0;
@@ -388,7 +388,7 @@
 }
 
 :root figcaption {
-	color: var( --eksell-secondary-color );
+	color: var( --mcgillmed-theme-secondary-color );
 	font-size: 15px;
 	font-weight: 400;
 	margin: 12px auto 0 auto;
@@ -411,7 +411,7 @@
 
 
 :root fieldset {
-	border: 2px solid var( --eksell-border-color );
+	border: 2px solid var( --mcgillmed-theme-border-color );
 	padding: 20px;
 }
 
@@ -470,7 +470,7 @@
 .wp-block-cover,
 .wp-block .wp-block-cover,
 .wp-block .wp-block-group {
-	max-width: var( --eksell-inner-width-thin );
+	max-width: var( --mcgillmed-theme-inner-width-thin );
 }
 
 .wp-block-group,
@@ -499,7 +499,7 @@
 /* Block: _Shared Table ---------------------- */
 
 :root table {
-	border-color: var( --eksell-border-color );
+	border-color: var( --mcgillmed-theme-border-color );
 	border-collapse: collapse;
     border-spacing: 0;
 	color: inherit;
@@ -522,7 +522,7 @@
 }
 
 :root table caption {
-	background-color: var( --eksell-border-color );
+	background-color: var( --mcgillmed-theme-border-color );
 	font-weight: 700;
 	text-align: center;
 }
@@ -531,7 +531,7 @@
 :root table tfoot { border-top-width: 2px; }
 
 :root .is-style-stripes tbody tr:nth-child(odd) {
-	background-color: var( --eksell-light-background-color );
+	background-color: var( --mcgillmed-theme-light-background-color );
 }
 
 /* Block: _Shared Lists ---------------------- */
@@ -556,7 +556,7 @@
 :root .wp-block-categories li > a,
 :root .wp-block-latest-posts li > a {
 	font-size: 1.25em;
-	font-weight: var( --eksell-headings-weight );
+	font-weight: var( --mcgillmed-theme-headings-weight );
 	text-decoration: none;
 }
 
@@ -575,10 +575,10 @@
 :root .wp-block-file .wp-block-file__button {
 	-webkit-appearance: none;
 	-moz-appearance: none;
-	background: var( --eksell-accent-color );
+	background: var( --mcgillmed-theme-accent-color );
 	border: none;
 	border-radius: 0;
-	color: var( --eksell-background-color );
+	color: var( --mcgillmed-theme-background-color );
 	cursor: pointer;
 	display: inline-flex;
 	font-size: 16px;
@@ -601,7 +601,7 @@
 /* BUTTON STYLE: OUTLINE */
 
 .is-style-outline .wp-block-button__link:not(.has-text-color) {
-	color: var( --eksell-accent-color );
+	color: var( --mcgillmed-theme-accent-color );
 }
 
 .is-style-outline .wp-block-button__link,
@@ -612,7 +612,7 @@
 }
 
 .wp-block-button__link.is-style-outline {
-	color: var( --eksell-accent-color );
+	color: var( --mcgillmed-theme-accent-color );
 }
 
 /* BUTTON STYLE: SQUARED */
@@ -648,8 +648,8 @@
 }
 
 :root .wp-block-calendar caption {
-	background-color: var( --eksell-accent-color );
-	color: var( --eksell-background-color );
+	background-color: var( --mcgillmed-theme-accent-color );
+	color: var( --mcgillmed-theme-background-color );
 }
 
 :root .wp-block-calendar table th {
@@ -684,7 +684,7 @@
 
 @media ( max-width: 599px ) {
 	:root .wp-block-column + .wp-block-column {
-		margin-top: calc( var( --eksell-inner-gutter ) / 2 );
+		margin-top: calc( var( --mcgillmed-theme-inner-gutter ) / 2 );
 	}
 }
 
@@ -733,8 +733,8 @@
 :root .wp-block-cover > .wp-block-cover__inner-container {
 	margin-left: auto;
 	margin-right: auto;
-	max-width: var( --eksell-inner-width-max );
-	width: calc( 100% - var( --eksell-inner-gutter-compensated ) );
+	max-width: var( --mcgillmed-theme-inner-width-max );
+	width: calc( 100% - var( --mcgillmed-theme-inner-gutter-compensated ) );
 }
 
 :root .wp-block-cover p {
@@ -764,7 +764,7 @@
 /* Block: File ------------------------------- */
 
 :root .wp-block-file {
-	background-color: var( --eksell-light-background-color );
+	background-color: var( --mcgillmed-theme-light-background-color );
 	padding: 24px;
 	text-align: center;
 	width: 100%;
@@ -858,13 +858,13 @@
 /* Block: Group ------------------------------ */
 
 :root .wp-block-group.has-background {
-	padding: calc( var( --eksell-inner-gutter ) / 2 );
+	padding: calc( var( --mcgillmed-theme-inner-gutter ) / 2 );
 }
 
 .wp-block-group__inner-container {
 	margin-left: auto;
 	margin-right: auto;
-	max-width: var( --eksell-inner-width-max );
+	max-width: var( --mcgillmed-theme-inner-width-max );
 }
 
 :root .wp-block-group.has-background > .wp-block-group__inner-container > [data-align=full] {
@@ -880,7 +880,7 @@
 :root h4.has-background, 
 :root h5.has-background, 
 :root h6.has-background {
-	padding: calc( var( --eksell-inner-gutter ) / 2 );
+	padding: calc( var( --mcgillmed-theme-inner-gutter ) / 2 );
 }
 
 /* Block: Image ------------------------------ */
@@ -925,7 +925,7 @@
 }
 
 :root .wp-block-latest-comments__comment-meta {
-	font-weight: var( --eksell-headings-weight );
+	font-weight: var( --mcgillmed-theme-headings-weight );
 }
 
 :root .wp-block-latest-comments__comment-meta a {
@@ -933,7 +933,7 @@
 }
 
 :root .wp-block-latest-comments time {
-	color: var( --eksell-secondary-color );
+	color: var( --mcgillmed-theme-secondary-color );
 	display: block;
 	font-size: .9em;
 	font-weight: 400;
@@ -974,7 +974,7 @@
 
 :root .wp-block-latest-posts .wp-block-latest-posts__post-author, 
 :root .wp-block-latest-posts .wp-block-latest-posts__post-date {
-	color: var( --eksell-secondary-color );
+	color: var( --mcgillmed-theme-secondary-color );
 	display: inline-block;
 	font-size: 16px;
 	margin: 10px 16px 0 0;
@@ -999,7 +999,7 @@
 /* STYLE: GRID */
 
 :root .wp-block-latest-posts.is-grid li {
-	border-color: var( --eksell-border-color );
+	border-color: var( --mcgillmed-theme-border-color );
 	margin-bottom: 24px;
 }
 
@@ -1020,7 +1020,7 @@
 /* Block: Media and Text --------------------- */
 
 :root .wp-block-media-text .wp-block-media-text__content {
-	padding: calc( var( --eksell-inner-gutter ) / 2 );
+	padding: calc( var( --mcgillmed-theme-inner-gutter ) / 2 );
 }
 
 :root .wp-block-media-text .wp-block-media-text__content > *:not([data-align]):not(.wp-block-group):not(.wp-block-cover) {
@@ -1032,13 +1032,13 @@
 :root .wp-block-media-text > .block-editor-block-list__layout > .wp-block:not([data-align="wide"]):not([data-align="full"]) > .wp-block-group,
 :root .wp-block-media-text > .block-editor-block-list__layout > .wp-block.wp-block-cover:not([data-align="wide"]):not([data-align="full"]),
 :root .wp-block-media-text > .block-editor-block-list__layout > .wp-block:not([data-align="wide"]):not([data-align="full"]) > .wp-block-cover {
-	max-width: var( --eksell-inner-width-thin );
+	max-width: var( --mcgillmed-theme-inner-width-thin );
 }
 
 /* Block: Paragraph -------------------------- */
 
 :root p.has-background {
-	padding: calc( var( --eksell-inner-gutter ) / 2 );
+	padding: calc( var( --mcgillmed-theme-inner-gutter ) / 2 );
 }
 
 /* Block: Pullquote -------------------------- */
@@ -1070,7 +1070,7 @@
 }
 
 :root .wp-block-pullquote blockquote:not(.has-text-color):before {
-	color: var( --eksell-accent-color );
+	color: var( --mcgillmed-theme-accent-color );
 }
 
 :root .wp-block-pullquote,
@@ -1110,7 +1110,7 @@
 :root blockquote:not(.has-text-color) .wp-block-pullquote__citation, 
 :root .wp-block-pullquote blockquote:not(.has-text-color) cite, 
 :root .wp-block-pullquote blockquote:not(.has-text-color) footer {
-	color: var( --eksell-accent-color );
+	color: var( --mcgillmed-theme-accent-color );
 }
 
 /* STYLE: DEFAULT */
@@ -1139,7 +1139,7 @@
 :root blockquote p:last-of-type { margin-bottom: 0; }
 
 :root .wp-block-quote {
-	border-color: var( --eksell-accent-color ) !important;
+	border-color: var( --mcgillmed-theme-accent-color ) !important;
 	border-style: solid;
 	border-width: 0 0 0 2px;
 	color: inherit;
@@ -1165,7 +1165,7 @@
 :root .wp-block-quote__citation, 
 :root .wp-block-quote cite, 
 :root .wp-block-quote footer {
-	color: var( --eksell-accent-color );
+	color: var( --mcgillmed-theme-accent-color );
 	font-size: 16px;
 	font-style: normal;
 	font-weight: 700;
@@ -1217,7 +1217,7 @@
 	background-position: 0;
     background-size: 4px 4px;
 	border: none;
-	color: var( --eksell-border-color );
+	color: var( --mcgillmed-theme-border-color );
 	height: 10px;
 	image-rendering: pixelated;
 	margin: 32px auto;
@@ -1240,7 +1240,7 @@
 }
 
 :root .is-root-container > hr.wp-block-separator.is-style-left-aligned {
-	border-right: calc( var( --eksell-inner-width-thin ) - 160px ) solid var( --eksell-background-color );
+	border-right: calc( var( --mcgillmed-theme-inner-width-thin ) - 160px ) solid var( --mcgillmed-theme-background-color );
 	box-sizing: content-box;
 	margin-left: auto;
 }
@@ -1258,7 +1258,7 @@
 }
 
 :root .is-root-container > hr.wp-block-separator.is-style-right-aligned {
-	border-left: calc( var( --eksell-inner-width-thin ) - 160px ) solid var( --eksell-background-color );
+	border-left: calc( var( --mcgillmed-theme-inner-width-thin ) - 160px ) solid var( --mcgillmed-theme-background-color );
 	box-sizing: content-box;
 	margin-right: auto;
 }
@@ -1383,8 +1383,8 @@
 	/* Setup --------------------------------- */
 
 	:root {
-		--eksell-inner-gutter: 96px;
-		--eksell-inner-gutter-compensated: 76px;
+		--mcgillmed-theme-inner-gutter: 96px;
+		--mcgillmed-theme-inner-gutter-compensated: 76px;
 	}
 
 	/* Structure ----------------------------- */
@@ -1658,8 +1658,8 @@
 	/* Setup --------------------------------- */
 
 	:root {
-		--eksell-inner-gutter: 128px;
-		--eksell-inner-gutter-compensated: 108px;
+		--mcgillmed-theme-inner-gutter: 128px;
+		--mcgillmed-theme-inner-gutter-compensated: 108px;
 	}
 
 	/* Blocks -------------------------------- */
@@ -1675,7 +1675,7 @@
 	/* BLOCK: GROUP */
 
 	:root .block-editor-block-list__layout.is-root-container > .wp-block[data-align="full"] > .wp-block-group.has-background {
-		padding: 64px calc( var( --eksell-inner-gutter-compensated ) / 2 );
+		padding: 64px calc( var( --mcgillmed-theme-inner-gutter-compensated ) / 2 );
 	}
 
 }
@@ -1685,8 +1685,8 @@
 	/* Setup --------------------------------- */
 
 	:root {
-		--eksell-inner-gutter: 192px;
-		--eksell-inner-gutter-compensated: 172px;
+		--mcgillmed-theme-inner-gutter: 192px;
+		--mcgillmed-theme-inner-gutter-compensated: 172px;
 	}
 
 	/* Blocks -------------------------------- */
