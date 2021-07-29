@@ -49,7 +49,7 @@
 /*	-1. Misc. Custom Code
 /* --------------------------------------------------------------------------------------------- */
 
-.menu-item.unclickable > div > a {
+.menu-item.unclickable>div>a {
     pointer-events: none;
 }
 
@@ -5149,11 +5149,17 @@ hr+.comment-reply-title {
     margin: -1.2rem 2.4rem 0 -2.4rem;
 }
 
+.footer-credits,
+.top-link {
+    font-size: 1.4rem;
+}
+
 .footer-credits p {
     margin: 1.2rem 0 0 2.4rem;
 }
 
-.footer-credits a {
+.footer-credits a,
+.top-link a {
     color: inherit;
     outline: none;
     text-decoration: none;
@@ -5164,7 +5170,10 @@ hr+.comment-reply-title {
 }
 
 .footer-credits a:hover,
-.footer-credits a:focus {
+.footer-credits a:focus,
+.top-link a:hover,
+.top-link a:focus {
+    text-decoration: underline;
     text-decoration-style: dotted;
 }
 
@@ -6335,7 +6344,8 @@ hr+.comment-reply-title {
 
     /* FOOTER INNER */
 
-    .footer-credits {
+    .footer-credits,
+    .top-link {
         font-size: 1.6rem;
     }
 

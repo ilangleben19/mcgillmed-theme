@@ -126,14 +126,24 @@ if (!($blank_canvas || $blank_canvas_with_aside)) :
                 <?php
                     // Translators: $s = name of the theme developer.
                     //printf( esc_html_x( 'Theme by %s', 'Translators: $s = name of the theme developer', 'mcgillmed_theme' ), '<a href="https://www.andersnoren.se">' . esc_html__( 'Anders Nor&eacute;n', 'mcgillmed_theme' ) . '</a>' );
-                    printf(esc_html_x('Proudly designed by %s', 'mcgillmed_theme'), '<a href="https://ilang.ca" target="_blank">' . esc_html__('Ian Langleben, class of 2024', 'mcgillmed_theme') . '</a>');
+                    printf(
+                        esc_html_x('Proudly designed by %s', 'mcgillmed_theme'),
+                        '<a href="https://ilang.ca" target="_blank">'
+                            . esc_html__('Ian Langleben, class of 2024', 'mcgillmed_theme') . '</a>'
+                    );
                     ?>
             </p><!-- .theme-credits -->
 
         </div><!-- .footer-credits -->
-
+        <div style="display: flex; flex-direction: column;">
+            <?php
+                mcgillmed_theme_the_social_menu();
+                ?>
+            <p class="color-secondary top-link">
+                <a href="#site-header">To the top ↑</a>
+            </p>
+        </div>
         <?php
-            mcgillmed_theme_the_social_menu();
 
             do_action('mcgillmed_theme_footer_inner_end');
             ?>
