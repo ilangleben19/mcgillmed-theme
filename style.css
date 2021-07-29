@@ -59,8 +59,8 @@
 
 :root {
     /* Typography */
-    --mcgillmed-theme-body-font: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, sans-serif;
-    --mcgillmed-theme-headings-font: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, sans-serif;
+    --mcgillmed-theme-body-font: 'McGillSans-Regular', 'Public Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, sans-serif;
+    --mcgillmed-theme-headings-font: 'McGillSans-Medium', 'Public Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, sans-serif;
     --mcgillmed-theme-headings-weight: 700;
     /* Colors */
     --mcgillmed-theme-accent-color: #d23c50;

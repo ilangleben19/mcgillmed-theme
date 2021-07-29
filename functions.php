@@ -187,6 +187,9 @@ if (!function_exists('mcgillmed_theme_register_styles')) :
         // Filter the list of dependencies used by the mcgillmed-theme-style CSS enqueue.
         $css_dependencies = apply_filters('mcgillmed_theme_css_dependencies', $css_dependencies);
 
+        // Enqueue the McGill fonts file
+        wp_enqueue_style('mcgillmed-theme-mcgill-fonts', get_template_directory_uri() . '/assets/css/mcgill-fonts.css', false, $theme_version, 'all');
+
         wp_enqueue_style('mcgillmed-theme-style', get_template_directory_uri() . '/style.css', $css_dependencies, $theme_version, 'all');
 
         // Add output of Customizer settings as inline style.

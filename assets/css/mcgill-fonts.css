@@ -1,0 +1,49 @@
+/* Borrowed from mcgill.ca */
+
+@font-face {
+    font-family: McGillSans-Regular;
+    src: url(https://mcgill.ca/sites/all/themes/coltrane19/dist/McGillSans-Regular.efdf2039.eot);
+    src: url(https://mcgill.ca/sites/all/themes/coltrane19/dist/McGillSans-Regular.efdf2039.eot?#iefix) format("embedded-opentype"), url(https://mcgill.ca/sites/all/themes/coltrane19/dist/McGillSans-Regular.7ac71b20.woff) format("woff"), url(https://mcgill.ca/sites/all/themes/coltrane19/dist/McGillSans-Regular.dfb7c6bf.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: McGillSans-Medium;
+    src: url(https://mcgill.ca/sites/all/themes/coltrane19/dist/McGillSans-Medium.1f8bffda.eot);
+    src: url(https://mcgill.ca/sites/all/themes/coltrane19/dist/McGillSans-Medium.1f8bffda.eot?#iefix) format("embedded-opentype"), url(https://mcgill.ca/sites/all/themes/coltrane19/dist/McGillSans-Medium.0097ee5d.woff) format("woff"), url(https://mcgill.ca/sites/all/themes/coltrane19/dist/McGillSans-Medium.3eb2c48e.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: McGillSans-Italic;
+    src: url(https://mcgill.ca/sites/all/themes/coltrane19/dist/McGillSans-Italic.ae7ccc91.eot);
+    src: url(https://mcgill.ca/sites/all/themes/coltrane19/dist/McGillSans-Italic.ae7ccc91.eot?#iefix) format("embedded-opentype"), url(https://mcgill.ca/sites/all/themes/coltrane19/dist/McGillSans-Italic.38cf8000.woff) format("woff"), url(https://mcgill.ca/sites/all/themes/coltrane19/dist/McGillSans-Italic.f3256c49.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: "McGillSerif-Medium";
+    src: url(https://mcgill.ca/sites/all/themes/coltrane19/dist/McGillSerif-Medium.12d9fcf2.eot);
+    src: url(https://mcgill.ca/sites/all/themes/coltrane19/dist/McGillSerif-Medium.12d9fcf2.eot?#iefix) format("embedded-opentype"), url(https://mcgill.ca/sites/all/themes/coltrane19/dist/McGillSerif-Medium.ee972601.woff) format("woff"), url(https://mcgill.ca/sites/all/themes/coltrane19/dist/McGillSerif-Medium.0e222d95.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: "McGillSerif-Italic";
+    src: url(https://mcgill.ca/sites/all/themes/coltrane19/dist/McGillSerif-Italic.1967e3cf.eot);
+    src: url(https://mcgill.ca/sites/all/themes/coltrane19/dist/McGillSerif-Italic.1967e3cf.eot?#iefix) format("embedded-opentype"), url(https://mcgill.ca/sites/all/themes/coltrane19/dist/McGillSerif-Italic.1fa5f9c9.woff) format("woff"), url(https://mcgill.ca/sites/all/themes/coltrane19/dist/McGillSerif-Italic.3897b155.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: "McGillSerif-Regular";
+    src: url(https://mcgill.ca/sites/all/themes/coltrane19/dist/McGillSerif-Regular.39fe214b.eot);
+    src: url(https://mcgill.ca/sites/all/themes/coltrane19/dist/McGillSerif-Regular.39fe214b.eot?#iefix) format("embedded-opentype"), url(https://mcgill.ca/sites/all/themes/coltrane19/dist/McGillSerif-Regular.2fe60a11.woff) format("woff"), url(https://mcgill.ca/sites/all/themes/coltrane19/dist/McGillSerif-Regular.8b228be0.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal
+}
