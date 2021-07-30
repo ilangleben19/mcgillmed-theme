@@ -17,6 +17,11 @@ if (!($blank_canvas || $blank_canvas_with_aside)) :
      *
      * If none of the sidebars have widgets, then let's bail early.
      */
+
+        // i-a a-fade-up a-del-300
+
+
+
         if (
             !is_active_sidebar('first-footer-widget-area')
             && !is_active_sidebar('second-footer-widget-area')
@@ -30,7 +35,7 @@ if (!($blank_canvas || $blank_canvas_with_aside)) :
             && is_active_sidebar('third-footer-widget-area')
             && is_active_sidebar('fourth-footer-widget-area')
         ) : ?>
-    <aside class="fatfooter section-inner" role="complementary">
+    <aside class="fatfooter section-inner i-a a-fade-up a-del-300" role="complementary">
         <div class="first quarter left widget-area">
             <?php dynamic_sidebar('first-footer-widget-area'); ?>
         </div><!-- .first .widget-area -->
@@ -46,7 +51,7 @@ if (!($blank_canvas || $blank_canvas_with_aside)) :
         <div class="fourth quarter right widget-area">
             <?php dynamic_sidebar('fourth-footer-widget-area'); ?>
         </div><!-- .fourth .widget-area -->
-    </aside><!-- #fatfooter section-inner -->
+    </aside><!-- #fatfooter section-inner i-a a-fade-up a-del-300 -->
 
     <?php
         elseif (
@@ -55,7 +60,7 @@ if (!($blank_canvas || $blank_canvas_with_aside)) :
             && is_active_sidebar('third-footer-widget-area')
             && !is_active_sidebar('fourth-footer-widget-area')
         ) : ?>
-    <aside class="fatfooter section-inner" role="complementary">
+    <aside class="fatfooter section-inner i-a a-fade-up a-del-300" role="complementary">
         <div class="first one-third left widget-area">
             <?php dynamic_sidebar('first-footer-widget-area'); ?>
         </div><!-- .first .widget-area -->
@@ -68,7 +73,7 @@ if (!($blank_canvas || $blank_canvas_with_aside)) :
             <?php dynamic_sidebar('third-footer-widget-area'); ?>
         </div><!-- .third .widget-area -->
 
-    </aside><!-- #fatfooter section-inner -->
+    </aside><!-- #fatfooter section-inner i-a a-fade-up a-del-300 -->
 
     <?php
         elseif (
@@ -77,7 +82,7 @@ if (!($blank_canvas || $blank_canvas_with_aside)) :
             && !is_active_sidebar('third-footer-widget-area')
             && !is_active_sidebar('fourth-footer-widget-area')
         ) : ?>
-    <aside class="fatfooter section-inner" role="complementary">
+    <aside class="fatfooter section-inner i-a a-fade-up a-del-300" role="complementary">
         <div class="first half left widget-area">
             <?php dynamic_sidebar('first-footer-widget-area'); ?>
         </div><!-- .first .widget-area -->
@@ -86,7 +91,7 @@ if (!($blank_canvas || $blank_canvas_with_aside)) :
             <?php dynamic_sidebar('second-footer-widget-area'); ?>
         </div><!-- .second .widget-area -->
 
-    </aside><!-- #fatfooter section-inner -->
+    </aside><!-- #fatfooter section-inner i-a a-fade-up a-del-300 -->
 
     <?php
         elseif (
@@ -96,12 +101,12 @@ if (!($blank_canvas || $blank_canvas_with_aside)) :
             && !is_active_sidebar('fourth-footer-widget-area')
         ) :
         ?>
-    <aside class="fatfooter section-inner" role="complementary">
+    <aside class="fatfooter section-inner i-a a-fade-up a-del-300" role="complementary">
         <div class="first full-width widget-area">
             <?php dynamic_sidebar('first-footer-widget-area'); ?>
         </div><!-- .first .widget-area -->
 
-    </aside><!-- #fatfooter section-inner -->
+    </aside><!-- #fatfooter section-inner i-a a-fade-up a-del-300 -->
 
     <?php
         //end of all sidebar checks.
