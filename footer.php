@@ -12,15 +12,23 @@ if (!($blank_canvas || $blank_canvas_with_aside)) :
 <footer id="site-footer">
 
     <?php
+        /* Code for logo widget area */
+        if (is_active_sidebar('logo-footer-widget-area')) : ?>
+
+        <aside class="fatfooter section-inner i-a a-fade-up a-del-300" role="complementary">
+            <div class="widget-area">
+                <?php dynamic_sidebar('logo-footer-widget-area'); ?>
+            </div><!-- .widget-area -->
+        </aside><!-- #fatfooter section-inner i-a a-fade-up a-del-300 -->
+
+    <?php endif; ?>
+
+    <?php
         /* The footer widget area is triggered if any of the areas
      * have widgets. So let's check that first.
      *
      * If none of the sidebars have widgets, then let's bail early.
      */
-
-        // i-a a-fade-up a-del-300
-
-
 
         if (
             !is_active_sidebar('first-footer-widget-area')

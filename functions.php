@@ -1048,6 +1048,17 @@ endif;
 if (!function_exists('mcgillmed_theme_widgets_init')) :
     function mcgillmed_theme_widgets_init()
     {
+        // Logo footer widget area, located above the four columns in the footer. Empty by default.
+        register_sidebar(array(
+            'name' => __('Logo Footer Widget Area', 'mcgillmed_theme'),
+            'id' => 'logo-footer-widget-area',
+            'description' => __('The logo footer widget area', 'mcgillmed_theme'),
+            'before_widget' => '<div id="%1$s class="widget-container %2$s">',
+            'after_widget' => '</div>',
+            'before_title' => '<h3 class="widget-title">',
+            'after_title' => '</h3>',
+        ));
+
         // First footer widget area, located in the footer. Empty by default.
         register_sidebar(array(
             'name' => __('First Footer Widget Area', 'mcgillmed_theme'),
